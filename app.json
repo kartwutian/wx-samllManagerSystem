@@ -1,0 +1,82 @@
+{
+  "pages": [
+    "pages/login/index",
+    "dev/dashboard/index",
+    "dev/actionsheet/index",
+    "dev/btn/index",
+    "dev/checkbox/index",
+    "dev/badge/index",
+    "dev/capsule/index",
+    "dev/card/index",
+    "dev/cell/index",
+    "dev/dialog/index",
+    "dev/field/index",
+    "dev/helper/index",
+    "dev/icon/index",
+    "dev/layout/index",
+    "dev/loading/index",
+    "dev/noticebar/index",
+    "dev/panel/index",
+    "dev/popup/index",
+    "dev/radio/index",
+    "dev/stepper/index",
+    "dev/steps/index",
+    "dev/switch/index",
+    "dev/search/index",
+    "dev/tab/index",
+    "dev/tag/index",
+    "dev/toptips/index",
+    "dev/toast/index",
+    "dev/tree-select/index",
+    "dev/select/index",
+    "dev/datetime/index",
+    "dev/loadmore/index",
+    "dev/talks/index/index",
+    "dev/talks/edit/edit",
+    "pages/projectList/index",
+    "pages/analysis/index",
+    "pages/approvalList/index",
+    "pages/myCenter/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FAFAFA",
+    "navigationBarTitleText": "ZanUI-WeApp",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f9f9f9"
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.0.6",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "",
+    "selectedColor": "#f00",
+    "list": [
+      {
+        "pagePath": "pages/analysis/index",
+        "text": "统计分析"
+      },
+      {
+        "pagePath": "pages/projectList/index",
+        "text": "项目对接"
+      },
+      {
+        "pagePath": "pages/approvalList/index",
+        "text": "领导批示"
+      },
+      {
+        "pagePath": "pages/myCenter/index",
+        "text": "更多"
+      },
+      {
+        "pagePath": "dev/dashboard/index",
+        "text": "辅助"
+      }
+    ]
+  },
+  "debug": true
+}

@@ -1,0 +1,28 @@
+
+
+<view class="container" wx:if="{{!showLoadding}}">
+  <view class="login-bg"></view>
+  <view class="login-wrap">
+    
+    <view class="header">
+      <view class="app-desc">{{appName}}</view>
+      <image class="logo" src="{{logo}}"></image>
+      <view>请先登录</view>
+    </view>
+    <view>
+      <view class="login-cell">
+        <view class="login-cell__hd">账号</view>
+        <input placeholder-class="login-cell__bd-placeholder" placeholder="请输入账号名" focus="{{ false }}" value="{{ loginInfo.username }}" bindinput="keyInput" bindconfirm="login" id="username"/>
+      </view>
+      
+      <view class="login-cell">
+        <view class="login-cell__hd">密码</view>
+        <input placeholder-class="login-cell__bd-placeholder" type="password" placeholder="请输入密码" value="{{ loginInfo.password }}" bindinput="keyInput" bindconfirm="login" id="password"/>
+      </view>
+    </view>
+    <view class="zan-btns">
+       <zan-button class="btn-login" size="large" type="primary" bindtap="login">登录</zan-button>
+    </view>
+  </view>
+  
+</view>
