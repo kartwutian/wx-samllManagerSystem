@@ -1,28 +1,25 @@
 
 
-<view class="container" wx:if="{{!showLoadding}}">
-  <view class="login-bg"></view>
-  <view class="login-wrap">
-    
-    <view class="header">
-      <view class="app-desc">{{appName}}</view>
-      <image class="logo" src="{{logo}}"></image>
-      <view>请先登录</view>
-    </view>
-    <view>
-      <view class="login-cell">
-        <view class="login-cell__hd">账号</view>
-        <input placeholder-class="login-cell__bd-placeholder" placeholder="请输入账号名" focus="{{ false }}" value="{{ loginInfo.username }}" bindinput="keyInput" bindconfirm="login" id="username"/>
+<view class="container">
+  <view class="container-login">
+    <view class="login-header">{{appName}}</view>
+    <view class="login-body">
+      <view class="login-item">
+        <input type="text" placeholder-class="placeholder-input" placeholder="账号名" value="{{ loginInfo.username }}" bindinput="keyInput" id="username" focus="{{true}}"></input>
+        <view class="icon-wrap" data-target="username" bindtap="clear">
+          <zan-icon type="clear"></zan-icon>
+        </view>
+        
       </view>
-      
-      <view class="login-cell">
-        <view class="login-cell__hd">密码</view>
-        <input placeholder-class="login-cell__bd-placeholder" type="password" placeholder="请输入密码" value="{{ loginInfo.password }}" bindinput="keyInput" bindconfirm="login" id="password"/>
+      <view class="login-item">
+        <input type="password" placeholder-class="placeholder-input" placeholder="密码" value="{{ loginInfo.password }}" bindinput="keyInput" id="password"></input>
+        <view class="icon-wrap" data-target="password" bindtap="clear">
+          <zan-icon type="clear"></zan-icon>
+        </view>
       </view>
     </view>
-    <view class="zan-btns">
-       <zan-button class="btn-login" size="large" type="primary" bindtap="login">登录</zan-button>
+    <view class="login-footer">
+      <zan-button class="btn-login" type="blue" bindtap="login" loading="{{false}}">登录</zan-button>
     </view>
   </view>
-  
 </view>

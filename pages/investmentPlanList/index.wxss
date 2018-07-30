@@ -1,0 +1,60 @@
+.with-filter{
+  position: relative;
+  display: inline-block;
+  padding-right: 15px;
+}
+.with-filter:after{
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  width: 7px;
+  height: 7px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transform: rotateZ(-45deg);
+}
+
+.drop-down-filter {
+  background-color: #f8f8f8;
+  display: none;
+}
+.drop-down-filter.active{
+  display: block;
+}
+.drop-down-filter__mask {
+  content: '';
+  position: fixed;
+  top: 43px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.drop-down-filter__container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 43px;
+  background: #f8f8f8;
+  z-index: 11;
+}
+.drop-down-filter__item{
+  position: relative;
+  text-align: center;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 40px;
+}
+.drop-down-filter__item:after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ececec;
+  transform: scaleY(0.5);
+}

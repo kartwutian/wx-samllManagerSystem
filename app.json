@@ -1,6 +1,11 @@
 {
   "pages": [
     "pages/login/index",
+    "pages/investmentPlanList/index",
+    "pages/investmentPlanDetail/index",
+    "pages/setting/index",
+
+    "dev/login/index",
     "dev/dashboard/index",
     "dev/actionsheet/index",
     "dev/btn/index",
@@ -36,7 +41,9 @@
     "pages/projectList/index",
     "pages/analysis/index",
     "pages/approvalList/index",
-    "pages/myCenter/index"
+    "pages/myCenter/index",
+    
+    "pages/search/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",

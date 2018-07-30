@@ -1,0 +1,25 @@
+<view class="container">
+
+  <zan-panel>
+    <zan-search
+      alignLeft="{{ true }}"
+      placeholder="搜索..."
+      searchStyle="height: 88rpx; padding: 0 30rpx; background: {{ searchbg || '#F2F2F2' }};"
+      inputStyle="height: 56rpx; border-radius: 8rpx;"
+      keyword="{{ inputValue }}"
+      placeholder="请输入企业名称/企业地址"
+      focus="{{ focus }}"
+      bindchange="searchChange"
+      bindsearch="searchDone"
+    />
+  </zan-panel>
+  <view class="search-result">
+    <view 
+    wx:for="{{['江湖笑，恩怨了，醉里看花花有泪',1,2,3]}}" 
+    wx:key="{{item}}"
+    class="search-item"
+    >
+    {{item}}
+    </view>
+  </view>
+</view>

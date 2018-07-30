@@ -1,0 +1,19 @@
+<view class="container">
+  <zan-panel wx:for="{{dashboard}}" wx:for-item="panel" wx:key="{{panel.title}}" title="{{panel.title}}">
+    <zan-cell-group>
+      <zan-cell 
+        wx:for="{{panel.items}}"
+        wx:key="{{item.name}}"
+        title="{{item.name}}" 
+        label="{{item.label}}" 
+        value="{{item.value}}" 
+        is-link="{{( item.url && item.url !=='/pages/search/index' ) ? item.url : false}}"
+        url="{{item.url}}"
+        onlyTapFooter="{{item.filter}}"
+      >
+       
+        <zan-icon class="pretty-icon" wx:if="{{item.icon}}" slot="icon" type="{{item.icon}}"></zan-icon>
+      </zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+</view>

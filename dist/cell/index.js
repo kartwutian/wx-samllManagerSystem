@@ -45,6 +45,11 @@ Component({
       type: String,
       value: ''
     },
+    extend: {
+      type: Object,
+      value: {},
+      description: '导航参数扩展'
+    },
     noBorder: Boolean
   },
   data: {
@@ -66,7 +71,6 @@ Component({
       if (this.data.onlyTapFooter) {
         return;
       }
-
       this.triggerEvent('tap', {});
       doNavigate.call(this);
     },
@@ -94,7 +98,7 @@ function doNavigate() {
 
   var type = typeof this.data.isLink;
 
-  if (!this.data.isLink || !url || url === 'true' || url === 'false') return;
+  if ( !url || url === 'true' || url === 'false') return;
 
   if (type !== 'boolean' && type !== 'string') {
     warn('isLink 属性值必须是一个字符串或布尔值', this.data.isLink);
@@ -105,5 +109,5 @@ function doNavigate() {
     warn('linkType 属性可选值为 navigateTo，redirectTo，switchTab，reLaunch', this.data.linkType);
     return;
   }
-  wx[this.data.linkType].call(wx, { url: url });
+  wx[this.data.linkType].call(wx, { ...this.data.extend, url: url });
 }

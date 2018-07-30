@@ -1,0 +1,39 @@
+<view class="container">
+  <zan-panel wx:for="{{dashboard}}" wx:for-item="panel" wx:key="{{panel.title}}" title="{{panel.title}}">
+    <zan-cell-group>
+      <zan-cell 
+        wx:for="{{panel.items}}"
+        wx:key="{{item.name}}"
+        title="{{item.name}}" 
+        label="{{item.label}}" 
+        is-link="{{( item.url && item.url !=='/pages/search/index' ) ? item.url : false}}"
+        url="{{item.url}}"
+        onlyTapFooter="{{item.filter}}"
+      >
+        <zan-icon wx:if="{{item.icon}}" slot="icon" type="checked"></zan-icon>
+        <view wx:if="{{item.filter}}" >
+          <view class="with-filter" bindtap="toggleFilter">
+            {{filterItem}}
+          </view>
+          <view class="drop-down-filter {{activeClass}}">
+            <view class="drop-down-filter__mask" bindtap="toggleFilter"></view>
+            <view class="drop-down-filter__container">
+              <view 
+              class="drop-down-filter__item" 
+              wx:for="{{['全部','商城集团','市场集团','商务局','丝路新区']}}"
+              wx:key="{{item}}"
+              data-filter="{{item}}"
+              bindtap="filter"
+              >
+                {{item}}
+              </view>
+            </view>
+          </view>
+        </view>
+        <view slot="footer">
+          <zan-icon wx:if="{{item.filter}}" type="search"></zan-icon>
+        </view>
+      </zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+</view>

@@ -1,2 +1,18 @@
-<!--pages/myCenter/index.wxml-->
-<text>pages/myCenter/index.wxml</text>
+<view class="container">
+
+  <zan-panel wx:for="{{dashboard}}" wx:for-item="panel" wx:key="{{panel.title}}" title="{{panel.title}}">
+  <zan-cell-group>
+    <zan-cell 
+      wx:for="{{panel.items}}"
+      wx:key="{{item.name}}"
+      title="{{item.name}}" 
+      value="{{item.value}}" 
+      is-link="{{item.url ? item.url : false}}"
+      linkType="navigateTo"
+      url="{{item.url}}"
+    >
+      <zan-icon wx:if="{{item.icon}}" slot="icon" type="checked"></zan-icon>
+    </zan-cell>
+  </zan-cell-group>
+  </zan-panel>
+</view>

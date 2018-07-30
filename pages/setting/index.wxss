@@ -1,0 +1,21 @@
+.container{
+  padding: 15px 0;
+}
+.pretty-icon{
+  margin-right: 10px;
+}
+.btn-wrap{
+  margin-top: 400px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.bd-name{
+  font-size: 17px;
+  color: #000;
+  line-height: 30px;
+}
+.bd-label{
+  line-height: 30px;
+  font-size: 15px;
+  color: #666;
+}

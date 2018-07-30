@@ -18,7 +18,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    appName: '商贸招商引资',
+    appName: '商贸线管理',
     logo: '/asserts/imgs/logo-30_30.png',
     loginInfo: {
       username: '',
@@ -94,31 +94,18 @@ Page({
   onShareAppMessage: function () {
     
   },
-
-  clear: function(e){
-    console.log(e)
-    if (e.currentTarget.dataset && e.currentTarget.dataset.target){
-      this.setData({
-        loginInfo: {
-          ...this.data.loginInfo,
-          [e.currentTarget.dataset.target]: ''
-        }
-      })
-    }
-   
-  },
   keyInput: function (e) {
     if (e.target.id === 'username') {
       this.setData({
         loginInfo: {
-          ...this.data.loginInfo,
           username: e.detail.value,
+          password: this.data.loginInfo.password
         }
       })
     } else if (e.target.id === 'password') {
       this.setData({
         loginInfo: {
-          ...this.data.loginInfo,
+          username: this.data.loginInfo.username,
           password: e.detail.value
         }
       })

@@ -4,7 +4,6 @@
     "zan-toptips": "/dist/toptips/index",
     "zan-toast": "/dist/toast/index",
     "zan-loading": "/dist/loading/index",
-    "zan-button": "/dist/btn/index",
-    "zan-icon": "/dist/icon/index"
+    "zan-button": "/dist/btn/index"
   }
 }
