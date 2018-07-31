@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "Field 输入框",
+  "usingComponents": {
+    "zan-button": "/dist/btn/index",
+    "zan-button-group": "/dist/btn-group/index",
+    "zan-cell-group": "/dist/cell-group/index",
+    "zan-cell": "/dist/cell/index",
+    "zan-field": "/dist/field/index",
+    "zan-panel": "/dist/panel/index",
+    "zan-actionsheet": "/dist/actionsheet/index"
+  }
+}

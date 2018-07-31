@@ -1,53 +1,27 @@
-var Zan = require('../../dist/index');
+// pages/buildingList/index.js
 var config = require('config');
-var list = require('list');
-Page(Object.assign({}, {
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    dashboard: list,
+    dashboard: config,
     height: '',
-
-    filter: config,
-    filterItem: '所有状态',
-    activeClass: '',
   },
-
-  onLoad() {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          height: res.windowHeight
-        })
-      }
+  previewImg(e) {
+    wx.previewImage({
+      current: e.currentTarget.dataset.src, // 当前显示图片的http链接
+      urls: [e.currentTarget.dataset.src] // 需要预览的图片http链接列表
     })
   },
-
-  onShow() {
-  },
-  toggleFilter() {
-    this.setData({
-      activeClass: this.data.activeClass ? '': 'active'
-    })
-  },
-  filter(e) {
-    console.log(e);
-    this.setData({
-      filterItem: e.currentTarget.dataset.filter
-    });
-
-    this.toggleFilter();
-    
-  },
-  handleTap(e) {
-    console.log(e);
-  },
-
-
   lower() {
     var result = this.data.dashboard;
 
     var resArr = [];
     for (let i = 0; i < 10; i++) {
-      resArr.push(this.data.dashboard[0]);
+      resArr.push(this.data.dashboard[0]);  
     };
     var cont = result.concat(resArr);
     console.log(resArr.length);
@@ -76,9 +50,17 @@ Page(Object.assign({}, {
       }, 1500)
     }
   },
-  handleNavigator(e) {
-    wx.navigateTo({
-      url: e.currentTarget.dataset.target,
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          height: res.windowHeight
+        })
+      }
     })
-  },
-}));
+
+  }
+})

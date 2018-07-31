@@ -1,7 +1,76 @@
-<!--pages/app/project_list/index.wxml-->
+<view class="container">
+  <zan-panel wx:for="{{filter}}" wx:for-item="panel" wx:key="{{panel.title}}" title="{{panel.title}}">
+    <zan-cell-group>
+      <zan-cell 
+        wx:for="{{panel.items}}"
+        wx:key="{{item.name}}"
+        title="{{item.name}}" 
+        label="{{item.label}}" 
+        is-link="{{( item.url && item.url !=='/pages/search/index' ) ? item.url : false}}"
+        url="{{item.url}}"
+        onlyTapFooter="{{item.filter}}"
+      >
+        <zan-icon wx:if="{{item.icon}}" slot="icon" type="checked"></zan-icon>
+        <view wx:if="{{item.filter}}" >
+          <view class="with-filter" bindtap="toggleFilter">
+            {{filterItem}}
+          </view>
+          <view style="float: right; margin-right: 10px;">
+             <zan-icon wx:if="{{item.filter}}" type="clock"></zan-icon>
+          </view>
+         
+          <view class="drop-down-filter {{activeClass}}">
+            <view class="drop-down-filter__mask" bindtap="toggleFilter"></view>
+            <view class="drop-down-filter__container">
+              <view 
+              class="drop-down-filter__item" 
+              wx:for="{{['所有状态','在谈','签约','落地']}}"
+              wx:key="{{item}}"
+              data-filter="{{item}}"
+              bindtap="filter"
+              >
+                {{item}}
+              </view>
+            </view>
+          </view>
+        </view>
+         
+        <view slot="footer">
+          <zan-icon wx:if="{{item.filter}}" type="search"></zan-icon>
+        </view>
+      </zan-cell>
+    </zan-cell-group>
+  </zan-panel>
 
+  <scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
+    <view class="panel">
+      <view class="panel-header">
+        <zan-button data-target="/pages/projectOperate/index" plain bindtap="handleNavigator" >
+          <view style="color:#3B81F3">+ 新增项目对接</view>
+        </zan-button>
+      </view>
+      <view wx:for="{{dashboard}}" wx:key="{{item.name}}" class="card">
+        <view class="card-bd">
+          <view>
+            <view class="card-bd--title">{{item.name}}</view>
+            <view class="card-bd--desc">
+              <view>
+                <zan-tag type="primary">
+                  {{item.desc.tag}}
+                </zan-tag>
+              </view>
+              <view class="card-bd--label">
+                {{item.label}}
+              </view>
+            </view>
+            <view class="card-bd--desc">
+              <view>{{item.desc.total}}</view>
+              <view>{{item.desc.use}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
 
-<doc-page>
-  <text>list</text>
-</doc-page>
-
+</view>

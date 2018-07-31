@@ -1,9 +1,14 @@
 {
   "pages": [
+   
     "pages/login/index",
     "pages/investmentPlanList/index",
     "pages/investmentPlanDetail/index",
     "pages/setting/index",
+    "pages/buildingList/index",
+    "pages/uploadImg/index",
+    "pages/projectList/index",
+    "pages/projectOperate/index",
 
     "dev/login/index",
     "dev/dashboard/index",
@@ -38,11 +43,10 @@
     "dev/loadmore/index",
     "dev/talks/index/index",
     "dev/talks/edit/edit",
-    "pages/projectList/index",
+   
     "pages/analysis/index",
     "pages/approvalList/index",
     "pages/myCenter/index",
-    
     "pages/search/index"
   ],
   "window": {

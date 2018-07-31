@@ -1,6 +1,7 @@
 <zan-cell
   class="field-class zan-field {{ error ? 'zan-field--error' : '' }} {{ mode === 'wrapped' ? 'zan-field--wrapped' : '' }} {{ !showBorder ? 'zan-field--no-border' : '' }}"
   cell-class="zan-cell--field"
+  isLink="{{isLink}}"
 >
   <view
     slot="icon"
@@ -22,6 +23,7 @@
     bindfocus="handleFieldFocus"
     bindblur="handleFieldBlur"
   ></textarea>
+  <slot wx:elif="{{ type === 'custom' }}"></slot>
   <input
     wx:else
     type="{{ inputType || 'text' }}"

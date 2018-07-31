@@ -1,0 +1,24 @@
+<!--pages/uploadImg/index.wxml-->
+
+<template name="we-cropper">
+    <canvas
+            class="cropper  {{cutImage}}" 
+            disable-scroll="true"
+            bindtouchstart="touchStart"
+            bindtouchmove="touchMove"
+            bindtouchend="touchEnd"
+            style="width:{{width}}px;height:{{height}}px;"
+            canvas-id="{{id}}">
+    </canvas>
+</template>
+
+<view>
+  <template is="we-cropper"  data="{{...cropperOpt}}"/>
+  <view class="cropper-buttons ">
+    <view class="upload boxshaw cropperUpload" bindtap="chooseimage">重新选择</view>
+    <view  class="boxshaw getCropperImage" bindtap="getCropperImage">确定</view>
+  </view>
+</view>
+
+<button bindtap="upfile">上传图片</button>
+<image src="{{img}}"></image>

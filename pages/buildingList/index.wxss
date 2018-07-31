@@ -1,0 +1,91 @@
+/* pages/buildingList/index.wxss */
+.panel{
+  background: #F9F9F9;
+}
+.panel-header{
+  color: #666;
+  padding: 20px 15px 10px;
+  font-size: 14px;
+}
+.card{
+  padding: 15px; 
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.card-bd{
+  display: flex;
+  position: relative;
+  padding-bottom: 5px;
+}
+.card-bd:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #ececec;
+  transform: scaleY(.5);
+}
+.card-bd image{
+  width: 75px;
+  height: 75px;
+  background-color: #EFEFEF;
+  margin-right: 10px;
+}
+
+.card-bd .card-bd--title{
+  color: #333;
+  font-size: 18px;
+  line-height: 25px;
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  display: -webkit-box;  
+  -webkit-line-clamp: 1;  
+  -webkit-box-orient: vertical;  
+}
+
+.card-bd .card-bd--label{
+  color: #666;
+  font-size: 15px;
+  line-height: 25px;
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  display: -webkit-box;  
+  -webkit-line-clamp: 1;  
+  -webkit-box-orient: vertical;  
+}
+
+.card-bd .card-bd--desc{
+  color: #666;
+  font-size: 15px;
+  line-height: 25px;
+  display: flex;
+}
+.card-bd .card-bd--desc>view:not(:last-child){
+  margin-right: 10px;
+}
+.card-ft{
+  margin-top: 8px;
+  display: flex;
+  font-size: 15px;
+}
+.card-ft view{
+  flex: 1;
+  text-align: center;
+
+}
+.card-ft view:nth-child(2n+1){
+  position: relative;
+}
+
+.card-ft view:nth-child(2n+1):after{
+  position: absolute;
+  content: '';
+  right: 0;
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  background-color: #ececec;
+
+}

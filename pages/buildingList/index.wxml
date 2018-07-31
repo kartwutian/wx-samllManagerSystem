@@ -1,0 +1,38 @@
+<!--pages/buildingList/index.wxml-->
+<view class="container">
+  
+  <scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
+    <view class="panel">
+      <view class="panel-header">楼宇信息</view>
+      <view wx:for="{{dashboard}}" wx:key="{{item.name}}" class="card">
+        <view class="card-bd">
+          <view class="card-bd--left">
+            <image 
+            src="{{item.img}}" 
+            data-src="{{item.img}}" 
+            lazy-load
+            bindtap="previewImg"
+            ></image>
+          </view>
+          <view class="card-bd--right">
+            <view class="card-bd--title">{{item.name}}</view>
+            <view class="card-bd--label">{{item.label}}</view>
+            <view class="card-bd--desc">
+              <view>
+                <zan-tag type="primary">
+                  {{item.desc.tag}}
+                </zan-tag>
+              </view>
+              <view>{{item.desc.total}}</view>
+              <view>{{item.desc.use}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="card-ft">
+          <view>{{item.extend.totalArea}}</view>
+          <view>{{item.extend.standardFloorArea}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

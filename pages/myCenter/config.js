@@ -40,7 +40,7 @@ module.exports = [
       {
         icon: "",
         name: "楼宇",
-        url: "/pages/investmentPlanList/index",
+        url: "/pages/buildingList/index",
         value: "10",
       },
     ]

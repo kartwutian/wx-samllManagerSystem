@@ -1,1 +1,119 @@
-/* pages/app/projectList/index.wxss */
+.with-filter{
+  position: relative;
+  display: inline-block;
+  padding-right: 15px;
+}
+.with-filter:after{
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  width: 7px;
+  height: 7px;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  transform: rotateZ(-45deg);
+}
+
+.drop-down-filter {
+  background-color: #f8f8f8;
+  display: none;
+}
+.drop-down-filter.active{
+  display: block;
+}
+.drop-down-filter__mask {
+  content: '';
+  position: fixed;
+  top: 43px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.drop-down-filter__container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 43px;
+  background: #f8f8f8;
+  z-index: 11;
+}
+.drop-down-filter__item{
+  position: relative;
+  text-align: center;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 40px;
+}
+.drop-down-filter__item:after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ececec;
+  transform: scaleY(0.5);
+}
+
+
+.panel{
+  background: #F9F9F9;
+}
+.panel-header{
+  color: #666;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.card{
+  padding: 15px; 
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.card-bd{
+  display: flex;
+  position: relative;
+}
+
+.card-bd image{
+  width: 75px;
+  height: 75px;
+  background-color: #EFEFEF;
+  margin-right: 10px;
+}
+
+.card-bd .card-bd--title{
+  color: #333;
+  font-size: 18px;
+  line-height: 25px;
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  display: -webkit-box;  
+  -webkit-line-clamp: 1;  
+  -webkit-box-orient: vertical;  
+}
+
+.card-bd .card-bd--label{
+  flex: 1;
+  color: #666;
+  font-size: 15px;
+  line-height: 25px;
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+  display: -webkit-box;  
+  -webkit-line-clamp: 1;  
+  -webkit-box-orient: vertical;  
+}
+
+.card-bd .card-bd--desc{
+  color: #666;
+  font-size: 15px;
+  line-height: 25px;
+  display: flex;
+}
+.card-bd .card-bd--desc>view:not(:last-child){
+  margin-right: 10px;
+}

@@ -13,6 +13,10 @@ Component({
 
   properties: {
     title: String,
+    isLink: {
+      type: Boolean,
+      value: false
+    },
     type: {
       type: String,
       value: 'input'
