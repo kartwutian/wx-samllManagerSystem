@@ -1,6 +1,6 @@
 {
   "pages": [
-   
+    
     "pages/login/index",
     "pages/investmentPlanList/index",
     "pages/investmentPlanDetail/index",
@@ -9,7 +9,7 @@
     "pages/uploadImg/index",
     "pages/projectList/index",
     "pages/projectOperate/index",
-
+"pages/projectProgressOperate/index",
     "dev/login/index",
     "dev/dashboard/index",
     "dev/actionsheet/index",

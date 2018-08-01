@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "新增项目",
+  "navigationBarTitleText": "新增跟进",
   "usingComponents": {
     "zan-button": "/dist/btn/index",
     "zan-button-group": "/dist/btn-group/index",

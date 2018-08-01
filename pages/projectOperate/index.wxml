@@ -1,40 +1,117 @@
 <view class="container">
   <!-- Field 基础用法 -->
-  <zan-panel title="基础信息">
-    <zan-cell-group>
-      <zan-field
-        title="{{ config.base.name.title }}"
-        placeholder="{{ config.base.name.placeholder }}"
-        focus="{{ config.base.name.focus }}"
-        value="{{ value }}"
-      >
-      </zan-field>
-      <zan-field
-        title="对接部门"
-        type="custom"
-        isLink
-      >
-        <view style="line-height: 40px;" bindtap="handleSelect">
-          请选择
+  <view class="fix--bottom">
+    <zan-panel title="基础信息">
+      <zan-cell-group>
+        <zan-field
+          title="项目方"
+          placeholder="填写项目方/企业名称"
+          focus="{{ true }}"
+          value=""
+        >
+        </zan-field>
+        <zan-field
+          title="对接部门"
+          type="custom"
+          isLink
+        >
+          <view style="line-height: 40px;" bindtap="handleSelect">
+            请选择
+          </view>
+        </zan-field>
+        <zan-field
+          title="项目等级"
+          type="custom"
+          isLink
+        >
+          <view style="line-height: 40px;" bindtap="openActionSheet">
+            请选择
+          </view>
+        </zan-field>
+        <zan-field
+          title="项目阶段"
+          value="暂无"
+          disabled="{{ true }}"
+        >
+        </zan-field>
+      </zan-cell-group>
+    </zan-panel>
+    <view class="{{showMore ? 'show': 'hidden'}}">
+      <zan-panel title="项目方（企业）简介">
+        <textarea placeholder="请填写项目方（企业）简介" class="pretty-textarea" maxlength="-1" auto-height></textarea>
+      </zan-panel>
+      <zan-panel title="需解决的困难和建议">
+        <textarea placeholder="请填写备注需解决的困难和建议" class="pretty-textarea" maxlength="-1" auto-height></textarea>
+      </zan-panel>
+      <zan-panel title="备注">
+        <textarea placeholder="请填写备注" class="pretty-textarea" maxlength="-1" auto-height></textarea>
+      </zan-panel>
+    </view>
+    <zan-button-group>
+      <view class="btn-wrap--custom">
+        <view class="btn-toggle" hover-class="btn-toggle--hover" bindtap="toggleShowMore">
+          {{showMoreText}}
         </view>
-      </zan-field>
-      <zan-field
-        title="项目等级"
-        type="custom"
-        isLink
-      >
-        <view style="line-height: 40px;" bindtap="openActionSheet">
-          请选择
+      </view>
+    </zan-button-group>
+
+    <zan-panel title="跟进记录">
+      <view class="record-wrap">
+        <view class="record-item">
+          <view class="record-wrap--header">
+            <view class="active">在谈</view>
+            <view>签约</view>
+            <view>落地</view>
+          </view>
+          <view class="record-btn--wrap" bindtap="handleNavigator">
+            <zan-button>
+              <view style="color:#3B81F3">+ 新增跟进</view>
+            </zan-button>
+          </view>
+          <view class="progress--circle"></view>
+          <view class="progress--line"></view>
         </view>
-      </zan-field>
-      <zan-field
-        title="{{ config.base.disabled.title }}"
-        value="{{ config.base.disabled.value }}"
-        disabled="{{ config.base.disabled.disabled }}"
-      >
-      </zan-field>
-    </zan-cell-group>
-  </zan-panel>
+        <view class="record-item">
+          <view class="record-item--header">
+            <view>2018-05-08-2018-06-08</view>
+          </view>
+          <view class="record-item--bd">
+            <view class="card">
+              <view class="card-header">
+                <view class="card-header--name">商城集团</view>
+                <view class="card-header--operate">
+                  <view class="icon-wrap" bindtap="test">
+                    <zan-icon type="delete" />
+                  </view>
+                  <view class="icon-wrap" bindtap="test">
+                    <zan-icon type="edit" />
+                  </view>
+                </view>
+              </view>
+              <view class="card-bd">
+                <view >
+                  集团招商小组陪同该集团董事长弗朗西斯科一行，拜访浙江义乌和德进出口有限公司骆兴龙董事长，了解肉类进口、海运价格、清关环节等相关事宜；下午前往义乌铁路口岸，向海关肉类口岸赵垣超主任详细了解进口肉类相关政策。
+                </view>
+                <view class="title-gray">达成意向</view>
+                <view class="with-left-border">此处填写跟进情况文字说明， 此处填写跟进情况文字说明。</view>
+              </view>
+              <view class="card-ft title-gray">创建时间：06.08 14:44</view>
+            </view>
+          </view>
+          <view class="progress--circle"></view>
+          <view class="progress--line"></view>
+        </view>
+        
+        
+        
+      </view>
+
+
+       
+    </zan-panel>
+   
+  </view>
+
   
   <zan-actionsheet
     show="{{ show }}"
@@ -46,9 +123,8 @@
   >
   </zan-actionsheet>
 
-  <zan-button-group>
-    <zan-button type="primary" bind:btnclick="clearInput">清除输入</zan-button>
-  </zan-button-group>
-
+  <view class="fixed-bottom">
+    <zan-button type="primary" bind:btnclick="test">确认新增</zan-button>
+  </view>
   
 </view>

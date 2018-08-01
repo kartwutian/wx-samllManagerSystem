@@ -45,8 +45,8 @@
   <scroll-view scroll-y='true' style="height:{{height}}px" bindscrolltolower='lower'>
     <view class="panel">
       <view class="panel-header">
-        <zan-button data-target="/pages/projectOperate/index" plain bindtap="handleNavigator" >
-          <view style="color:#3B81F3">+ 新增项目对接</view>
+        <zan-button data-target="/pages/projectOperate/index" type="default" bindtap="handleNavigator" >
+          + 新增项目对接
         </zan-button>
       </view>
       <view wx:for="{{dashboard}}" wx:key="{{item.name}}" class="card">

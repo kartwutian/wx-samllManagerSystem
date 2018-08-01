@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- Field 基础用法 -->
+  <view class="fix--bottom">
+    <zan-panel title="基本信息">
+      <zan-cell-group>
+        <zan-field
+          title="开始时间"
+          type="custom"
+          isLink
+        >
+          <view style="line-height: 40px;" bindtap="handleSelect">
+            请选择
+          </view>
+        </zan-field>
+        <zan-field
+          title="结束时间"
+          type="custom"
+          isLink
+        >
+          <view style="line-height: 40px;" bindtap="handleSelect">
+            请选择
+          </view>
+        </zan-field>
+        <zan-field
+          title="项目阶段"
+          type="custom"
+          isLink
+        >
+          <view style="line-height: 40px;" bindtap="openActionSheet">
+            请选择
+          </view>
+        </zan-field>
+        <zan-field
+          title="跟进单位"
+          type="custom"
+          isLink
+        >
+          <view style="line-height: 40px;" bindtap="openActionSheet">
+            请选择
+          </view>
+        </zan-field>
+      </zan-cell-group>
+    </zan-panel>
+    <view>
+      <zan-panel title="跟进情况">
+        <textarea placeholder="请填写跟进情况（必填）" class="pretty-textarea" maxlength="-1" auto-height></textarea>
+      </zan-panel>
+      <zan-panel title="达成意向">
+        <textarea placeholder="请填写达成意向" class="pretty-textarea" maxlength="-1" auto-height></textarea>
+      </zan-panel>
+      <zan-panel title="跟进图片">
+        <view class="img-area">
+          <view class="uploader__input-box">
+            <view class="uploader__input" bindtap="chooseImage"></view>
+          </view>
+        </view>
+        
+      </zan-panel>
+    </view>
+   
+  </view>
+
+  
+  <zan-actionsheet
+    show="{{ show }}"
+    actions="{{ actions }}"
+    cancel-text="{{ cancelText }}"
+    cancel-with-mask="{{ cancelWithMask }}"
+    bind:cancel="closeActionSheet"
+    bind:actionclick="handleActionClick"
+  >
+  </zan-actionsheet>
+
+  <view class="fixed-bottom">
+    <zan-button type="primary" bind:btnclick="clearInput">确认新增</zan-button>
+  </view>
+  
+</view>

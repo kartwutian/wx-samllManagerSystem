@@ -36,14 +36,30 @@
   border-width: 1px;
   border-radius: 4px;
 }
+.zan-btn--default {
+  color: #3B81F3;
+  background-color: #fff;
+}
 
+.zan-btn--default::after {
+  border-color: #BCBCBC;
+}
 .zan-btn--primary {
+  color: #fff;
+  background-color: #3B81F3;
+}
+
+.zan-btn--primary::after {
+  border-color: #3B81F3;
+}
+
+.zan-btn--secondary {
   color: #fff;
   background-color: #4b0;
 }
 
-.zan-btn--primary::after {
-  border-color: #0a0;
+.zan-btn--secondary::after {
+  border-color: #4b0;
 }
 
 .zan-btn--blue {
