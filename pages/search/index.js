@@ -1,3 +1,5 @@
+import qs from "../../utils/qs.js"
+
 Page({
   data: {
     inputValue: '',
@@ -16,5 +18,12 @@ Page({
 
   handleCancel() {
     console.error('cancel')
+  },
+  handleNavigator() {
+    console.log('handleNavigator 执行了')
+    console.log(qs.stringify({a:123,b:456}))
+    wx.switchTab({
+      url: '/pages/projectList/index',
+    })
   }
 });

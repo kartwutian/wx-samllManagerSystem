@@ -1,0 +1,67 @@
+<!--pages/filter/index.wxml-->
+
+
+<view class="container">
+  <view class="fix--bottom">
+    <zan-panel title="对接单位" hide-border="{{ true }}">
+      <view class="unit-wrap">
+        <view 
+        class="unit" 
+        wx:for="{{config}}" 
+        wx:key="{{item.name}}"
+        >
+          <view 
+          class="unit-name {{item.checked? 'checked' : ''}}"
+          data-index="{{index}}"
+          bindtap="handleCheck"
+          >
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </zan-panel>
+    <zan-panel title="跟进时间" hide-border="{{ true }}">
+
+      <view class="time-area">
+        <view class="time-select">
+          <zan-date-picker
+            date="2018/09/21"
+            not-use="{{['hours', 'minutes', 'seconds']}}"
+            bindchange="change"  
+            bindcancel="cancel"
+            placeholder="只显示部分列的 picker"
+            format="YYYY-MM-DD"
+          />
+        </view>
+        <view class="time-connect">-</view>
+        <view class="time-select">
+          <zan-date-picker
+            date="2012/09/21"
+            not-use="{{['hours', 'minutes', 'seconds']}}"
+            bindchange="change"  
+            bindcancel="cancel"
+            placeholder="只显示部分列的 picker"
+            format="YYYY-MM-DD"
+          />
+        </view>
+      </view>
+
+      
+    </zan-panel>
+  </view>
+  
+
+  <view class="fixed-bottom">
+    <view class="btn-group">
+      <view>
+        <zan-button bind:btnclick="clearInput">重置</zan-button>
+      </view>
+      <view>
+        <zan-button type="primary" bind:btnclick="handleFilter">确认</zan-button>
+      </view>
+    </view>
+    
+  </view>
+  
+</view>
+

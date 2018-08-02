@@ -1,15 +1,19 @@
 {
   "pages": [
-    
+    "pages/projectList/index",
     "pages/login/index",
     "pages/investmentPlanList/index",
     "pages/investmentPlanDetail/index",
     "pages/setting/index",
     "pages/buildingList/index",
     "pages/uploadImg/index",
-    "pages/projectList/index",
     "pages/projectOperate/index",
-"pages/projectProgressOperate/index",
+    
+    "pages/projectProgressOperate/index",
+    "pages/filter/index",
+    "pages/projectDetail/index",
+    
+    
     "dev/login/index",
     "dev/dashboard/index",
     "dev/actionsheet/index",
@@ -43,11 +47,11 @@
     "dev/loadmore/index",
     "dev/talks/index/index",
     "dev/talks/edit/edit",
-   
     "pages/analysis/index",
     "pages/approvalList/index",
     "pages/myCenter/index",
     "pages/search/index"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#FAFAFA",

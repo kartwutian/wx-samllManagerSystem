@@ -51,7 +51,9 @@
 .zan-actionsheet__subname {
   color: #999;
 }
-
+.zan-actionsheet__name.active{
+  color: #246ADC;
+}
 .zan-actionsheet__name, .zan-actionsheet__subname {
   height: 45px;
   line-height: 45px;

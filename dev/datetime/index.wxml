@@ -50,7 +50,7 @@
       picker-view
       bindchange="nativeChange"
       bindcancel="cancel"
-      not-use="{{['years', 'seconds']}}"
+      not-use="{{['hours','minutes', 'seconds']}}"
     />
   </zan-panel>
 

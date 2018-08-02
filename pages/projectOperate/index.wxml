@@ -92,10 +92,18 @@
                 <view >
                   集团招商小组陪同该集团董事长弗朗西斯科一行，拜访浙江义乌和德进出口有限公司骆兴龙董事长，了解肉类进口、海运价格、清关环节等相关事宜；下午前往义乌铁路口岸，向海关肉类口岸赵垣超主任详细了解进口肉类相关政策。
                 </view>
-                <view class="title-gray">达成意向</view>
-                <view class="with-left-border">此处填写跟进情况文字说明， 此处填写跟进情况文字说明。</view>
+                <view>
+                  <view class="title-gray">达成意向</view>
+                  <view class="with-left-border">此处填写跟进情况文字说明， 此处填写跟进情况文字说明。</view>
+                </view>
+                <view class="card-imgs">
+                  <view class="img-wrap">
+                    <image src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2625141229,1749458541&fm=173&app=25&f=JPEG?w=218&h=146&s=5A3A67C95C4234574E1D09020300C0D2"></image>
+                  </view>
+                </view>
               </view>
               <view class="card-ft title-gray">创建时间：06.08 14:44</view>
+             
             </view>
           </view>
           <view class="progress--circle"></view>

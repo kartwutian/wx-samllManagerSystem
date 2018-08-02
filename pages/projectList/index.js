@@ -1,14 +1,41 @@
 var Zan = require('../../dist/index');
 var config = require('config');
 var list = require('list');
+var { ProjectStatus } = require('../../utils/constant.js');
 Page(Object.assign({}, {
   data: {
+    ProjectStatus,
+    selectId: 'all',
     dashboard: list,
     height: '',
 
     filter: config,
     filterItem: '所有状态',
     activeClass: '',
+
+    showTimeSortFilter: false,
+    activeIndex: 0,
+    cancelWithMask: true,
+    actions: [
+      {
+        name: '按最新跟进时间由新到旧',
+        loading: false
+      }, 
+      {
+        name: '按最新跟进时间由旧到新',
+        loading: false
+      }, 
+      {
+        name: '按创建时间由新到旧',
+        loading: false
+      }, 
+      {
+        name: '按创建时间由旧到新',
+        loading: false
+      }
+    ],
+    cancelText: '取消',
+  
   },
 
   onLoad() {
@@ -21,7 +48,9 @@ Page(Object.assign({}, {
     })
   },
 
-  onShow() {
+  onShow(options) {
+    console.log('我回来啦')
+
   },
   toggleFilter() {
     this.setData({
@@ -31,7 +60,8 @@ Page(Object.assign({}, {
   filter(e) {
     console.log(e);
     this.setData({
-      filterItem: e.currentTarget.dataset.filter
+      selectId: e.currentTarget.dataset.id,
+      filterItem: e.currentTarget.dataset.filter,
     });
 
     this.toggleFilter();
@@ -41,6 +71,30 @@ Page(Object.assign({}, {
     console.log(e);
   },
 
+  openActionSheet() {
+    console.log('dddddd')
+    this.setData({
+      'showTimeSortFilter': true
+    });
+  },
+  closeActionSheet() {
+    this.setData({
+      'showTimeSortFilter': false
+    });
+  },
+  handleActionClick({ detail }) {
+    console.log(detail)
+    // 获取被点击的按钮 index
+    const { index } = detail;
+    this.setData({
+      activeIndex: index,
+    })
+  },
+  openFilter() {
+    wx.navigateTo({
+      url: '/pages/filter/index',
+    });
+  },
 
   lower() {
     var result = this.data.dashboard;
@@ -81,4 +135,9 @@ Page(Object.assign({}, {
       url: e.currentTarget.dataset.target,
     })
   },
+  to(){
+    wx.navigateTo({
+      url: '/pages/projectDetail/index',
+    })
+  }
 }));

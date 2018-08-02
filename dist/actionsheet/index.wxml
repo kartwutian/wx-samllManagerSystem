@@ -16,7 +16,7 @@
     >
       <!-- 自定义组件控制 slot 样式有问题，故在 slot 容器上传入 loading 信息 -->
       <view class="zan-actionsheet__btn-content {{ item.loading ? 'zan-actionsheet__btn--loading' : '' }}">
-        <view class="zan-actionsheet__name">{{ item.name }}</view>
+        <view class="zan-actionsheet__name {{activeIndex == index ? 'active': ''}}">{{ item.name }}</view>
         <view
           wx:if="{{ item.subname }}"
           class="zan-actionsheet__subname">

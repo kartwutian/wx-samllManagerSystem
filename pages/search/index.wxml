@@ -18,6 +18,7 @@
     wx:for="{{['江湖笑，恩怨了，醉里看花花有泪',1,2,3]}}" 
     wx:key="{{item}}"
     class="search-item"
+    bindtap="handleNavigator"
     >
     {{item}}
     </view>

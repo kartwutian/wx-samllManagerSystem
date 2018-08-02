@@ -48,6 +48,9 @@
   height: 40px;
   line-height: 40px;
 }
+.drop-down-filter__item.active{
+  color: #4b0;
+}
 .drop-down-filter__item:after{
   position: absolute;
   content: '';

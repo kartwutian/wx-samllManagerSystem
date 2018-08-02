@@ -1,0 +1,182 @@
+<view class="container">
+  <!-- Field 基础用法 -->
+  <view class="fix--bottom">
+    <view class="header">
+      <view class="header-title">
+        项目方名称浙江万博大数据运营有限公司
+      </view>
+      <view class="header-bd">
+        <view class="header-bd--tags">
+          <view class="pretty-tags">
+            <zan-tag type="primary">签约</zan-tag>
+          </view>
+          <view class="pretty-tags">
+            <zan-tag plain type="primary">一般项目</zan-tag>
+          </view>
+        </view>
+        <view>
+          2018-07-21
+        </view>
+      </view>
+      <view class="header-ft">
+        招商集团 | 市场集团 | 商务局 | 丝路新区
+      </view>
+    </view>
+
+    <view class="main {{showMore ? 'show': 'hidden'}}">
+      
+      <zan-panel title="项目方（企业）简介" hide-border="{{ true }}">
+        <zan-cell>
+        此处填写企业简介，此处填写企业简介，此处填写企业简介，填写企业简介，填写企业简介填写企业简介，填写企业简介。
+        </zan-cell>
+      </zan-panel>
+      <zan-panel title="需解决的困难和建议" hide-border="{{ true }}">
+        <zan-cell>
+        需解决的困难和建议阿斯顿发的说法阿打算范德萨发as
+        </zan-cell>
+      </zan-panel>
+      <zan-panel title="备注" hide-border="{{ true }}">
+        <zan-cell>
+        备注信息
+        </zan-cell>
+      </zan-panel>
+    </view>
+
+    <zan-button-group>
+      <view class="btn-wrap--custom">
+        <view class="btn-toggle" hover-class="btn-toggle--hover" bindtap="toggleShowMore">
+          {{showMoreText}}
+        </view>
+      </view>
+    </zan-button-group>
+
+    <zan-tab
+      list="{{ tab.list }}"
+      selected-id="{{ tab.selectedId }}"
+      bindtabchange="handleTabChange"
+    />
+
+    <view hidden="{{tab.selectedId === 'record'? false: true}}" class="record-wrap">
+      <view class="record-item">
+        <view class="record-wrap--header">
+          <view class="active">在谈</view>
+          <view>签约</view>
+          <view>落地</view>
+        </view>
+        <view class="record-btn--wrap" bindtap="handleNavigator">
+          <zan-button>
+            <view style="color:#3B81F3">+ 新增跟进</view>
+          </zan-button>
+        </view>
+        <view class="progress--circle"></view>
+        <view class="progress--line"></view>
+      </view>
+      <view class="record-item">
+        <view class="record-item--header">
+          <view>2018-05-08-2018-06-08</view>
+        </view>
+        <view class="record-item--bd">
+          <view class="card">
+            <view class="card-header">
+              <view class="card-header--name">商城集团</view>
+              <view class="card-header--operate">
+                <view class="icon-wrap" bindtap="test">
+                  <zan-icon type="delete" />
+                </view>
+                <view class="icon-wrap" bindtap="test">
+                  <zan-icon type="edit" />
+                </view>
+              </view>
+            </view>
+            <view class="card-bd">
+              <view >
+                集团招商小组陪同该集团董事长弗朗西斯科一行，拜访浙江义乌和德进出口有限公司骆兴龙董事长，了解肉类进口、海运价格、清关环节等相关事宜；下午前往义乌铁路口岸，向海关肉类口岸赵垣超主任详细了解进口肉类相关政策。
+              </view>
+              <view>
+                <view class="title-gray">达成意向</view>
+                <view class="with-left-border">此处填写跟进情况文字说明， 此处填写跟进情况文字说明。</view>
+              </view>
+              <view class="card-imgs">
+                <view class="img-wrap">
+                  <image src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2625141229,1749458541&fm=173&app=25&f=JPEG?w=218&h=146&s=5A3A67C95C4234574E1D09020300C0D2"></image>
+                </view>
+              </view>
+            </view>
+            <view class="card-ft title-gray">创建时间：06.08 14:44</view>
+            
+          </view>
+        </view>
+        <view class="progress--circle"></view>
+        <view class="progress--line"></view>
+      </view>
+      
+      
+      
+    </view>
+
+    <view hidden="{{tab.selectedId === 'record'? true: false}}">
+      <view class="panel">
+        <view class="panel-header">
+          <zan-button data-target="/pages/projectOperate/index" type="default" bindtap="handleNavigator" >
+            + 新增领导批示
+          </zan-button>
+        </view>
+        <view class="panel-bd">
+          <view class="bd-item">
+            <view class="bd-item-header">
+              <view class="avatar-wrap">
+                <image src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3343897221,2930484085&fm=58&bpow=478&bpoh=477"></image>
+              </view>
+              <view>投促局</view>
+              <view style="margin-top: -3px;">
+                <zan-tag type="warn">代转</zan-tag>
+              </view>
+            </view>
+            <view class="bd-item-bd">
+              此处填写批示内容，此处填写批示内容，此处填写批示内容，此处填写批示内容，此处填写批示到内容，此处填写批示内容，限100个字符。
+            </view>
+            <view class="bd-item-ft">
+              <view class="mark mark-primary">执行中</view>
+              <view>2018-07-21</view>
+            </view>
+          </view>
+          <view class="bd-item">
+            <view class="bd-item-header">
+              <view class="avatar-wrap">
+                <image src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=3343897221,2930484085&fm=58&bpow=478&bpoh=477"></image>
+              </view>
+              <view>投促局</view>
+              <view style="margin-top: -3px;">
+                <zan-tag type="warn">代转</zan-tag>
+              </view>
+            </view>
+            <view class="bd-item-bd">
+              此处填写批示内容，此处填写批示内容，此处填写批示内容，此处填写批示内容，此处填写批示到内容，此处填写批示内容，限100个字符。
+            </view>
+            <view class="bd-item-ft">
+              <view class="mark mark-secondary">已落地</view>
+              <view>2018-07-21</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+       
+   
+  </view>
+
+
+ <view class="fixed-bottom">
+    <view class="btn-group">
+      <view>
+        <zan-button type="danger" bind:btnclick="clearInput">删除</zan-button>
+      </view>
+      <view>
+        <zan-button type="primary" bind:btnclick="handleFilter">编辑</zan-button>
+      </view>
+    </view>
+    
+  </view>
+  
+</view>

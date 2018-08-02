@@ -1,10 +1,32 @@
-.pretty-textarea{
-  box-sizing: border-box;
-  padding: 10px 15px;
-  width: 100%;
-  font-size: 15px;
-  min-height: 100px;
+.container{
+  padding: 15px 0;
+  background-color: #fff;
 }
+.header{
+  padding: 0 15px;
+  line-height: 1.6;
+}
+.header-title{
+  font-size: 16px;
+  color: #333;
+}
+.header-bd{
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.header-bd--tags{
+  display: flex;
+}
+.pretty-tags{
+  margin-right: 10px;
+}
+.header-ft{
+  font-size: 14px;
+}
+
+
 .show{
   display: block;
 }
@@ -28,6 +50,7 @@
 .btn-toggle--hover{
   opacity: .6;
 }
+
 .record-wrap{
   padding: 15px;
   background-color: #F9F9F9;
@@ -145,6 +168,111 @@
   bottom:0;
   width: 100%;
   z-index:100;
+}
+
+.btn-group {
+  display: flex;
+}
+.btn-group>view{
+  flex: 1;
+}
+
+
+.panel{
+  background: #F9F9F9;
+}
+.panel-header{
+  color: #666;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.panel-bd{
+  background-color: #fff;
+  padding: 5px 15px;
+}
+.bd-item {
+  padding-bottom: 10px;
+  position: relative;
+}
+.bd-item:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: #ececec;
+  transform: scaleY(.5);
+}
+.bd-item .bd-item-header{
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+.bd-item .bd-item-header>view{
+  margin-right: 10px;
+}
+.avatar-wrap{
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+.avatar-wrap image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.bd-item .bd-item-bd{
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+.bd-item .bd-item-ft{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 5px 0;
+}
+.mark{
+  padding: 0 15px 0 20px;
+  position: relative;
+}
+.mark:after{
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0;
+  transform: translate3d(0,-50%,0);
+  width: 10px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+.mark-primary{
+  color:#3B81F3;
+}
+.mark-primary:after{
+  background-color: #3B81F3;
+}
+.mark-secondary{
+  color:#4b0;
+}
+.mark-secondary:after{
+  background-color: #4b0;
+}
+
+.mark-warn{
+  color:#f85;
+}
+.mark-warn:after{
+  background-color: #f85;
+}
+
+.mark-danger{
+  color:#f44;
+}
+.mark-danger:after{
+  background-color: #f44;
 }
 .card{
   padding: 10px 15px;

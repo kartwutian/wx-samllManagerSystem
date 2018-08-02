@@ -19,13 +19,14 @@
             <view class="drop-down-filter__mask" bindtap="toggleFilter"></view>
             <view class="drop-down-filter__container">
               <view 
-              class="drop-down-filter__item" 
-              wx:for="{{['全部','商城集团','市场集团','商务局','丝路新区']}}"
-              wx:key="{{item}}"
-              data-filter="{{item}}"
+              class="drop-down-filter__item {{item.id === selectId ? 'active': ''}}" 
+              wx:for="{{investmentUnits}}"
+              wx:key="{{item.name}}"
+              data-filter="{{item.name}}"
+              data-id="{{item.id}}"
               bindtap="filter"
               >
-                {{item}}
+                {{item.name}}
               </view>
             </view>
           </view>

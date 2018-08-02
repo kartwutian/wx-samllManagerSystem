@@ -12,7 +12,8 @@ module.exports = [
     name: '此处填写楼宇名称',
     label: '此处填写地址此处填写地址',
     desc: {
-      tag: '出售',
+      tag: '签约',
+      tagType: 'secondary',
       total: '共3层',
       use: '可租售楼层数：3'
     }
@@ -21,7 +22,8 @@ module.exports = [
     name: '此处填写楼宇名称a阿电饭锅电饭锅讽德诵功电风扇公司大范甘迪上官上官是否感受到',
     label: '此处填写地址此处填写地址公司电饭锅双方各法身高多少个',
     desc: {
-      tag: '在谈',
+      tag: '落地',
+      tagType: 'primary',
       total: '最新更新时间：2018-08-05',
       use: '共3次'
     }

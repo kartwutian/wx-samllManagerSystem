@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "请选择过滤项",
+  "usingComponents": {
+    "zan-panel": "/dist/panel/index",
+    "zan-cell": "/dist/cell/index",
+    "zan-date-picker": "../../dist/datetime-picker/index",
+    "zan-button": "/dist/btn/index"
+  }
+}

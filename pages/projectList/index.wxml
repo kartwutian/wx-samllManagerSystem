@@ -16,20 +16,34 @@
             {{filterItem}}
           </view>
           <view style="float: right; margin-right: 10px;">
-             <zan-icon wx:if="{{item.filter}}" type="clock"></zan-icon>
+            <zan-icon 
+            style="padding:0 5px;" 
+            wx:if="{{item.filter}}" 
+            type="points"
+            bindtap="openFilter"
+            ></zan-icon>
+
+            <zan-icon 
+            style="padding:0 5px;" 
+            wx:if="{{item.filter}}" 
+            type="clock"
+            bindtap="openActionSheet"
+            ></zan-icon>
+            
           </view>
          
           <view class="drop-down-filter {{activeClass}}">
             <view class="drop-down-filter__mask" bindtap="toggleFilter"></view>
             <view class="drop-down-filter__container">
               <view 
-              class="drop-down-filter__item" 
-              wx:for="{{['所有状态','在谈','签约','落地']}}"
-              wx:key="{{item}}"
-              data-filter="{{item}}"
+              class="drop-down-filter__item {{item.id === selectId ? 'active': ''}}" 
+              wx:for="{{ProjectStatus}}"
+              wx:key="{{item.name}}"
+              data-filter="{{item.name}}"
+              data-id="{{item.id}}"
               bindtap="filter"
               >
-                {{item}}
+                {{item.name}}
               </view>
             </view>
           </view>
@@ -49,13 +63,13 @@
           + 新增项目对接
         </zan-button>
       </view>
-      <view wx:for="{{dashboard}}" wx:key="{{item.name}}" class="card">
+      <view wx:for="{{dashboard}}" wx:key="{{item.name}}" bindtap="to" class="card">
         <view class="card-bd">
           <view>
             <view class="card-bd--title">{{item.name}}</view>
             <view class="card-bd--desc">
               <view>
-                <zan-tag type="primary">
+                <zan-tag type="{{item.desc.tagType}}">
                   {{item.desc.tag}}
                 </zan-tag>
               </view>
@@ -73,4 +87,15 @@
     </view>
   </scroll-view>
 
+  <!-- 监听自定义事件 cancel 和 actionclick，绑定回调函数 -->
+  <zan-actionsheet
+    show="{{ showTimeSortFilter }}"
+    actions="{{ actions }}"
+    cancel-text="{{ cancelText }}"
+    cancel-with-mask="{{ cancelWithMask }}"
+    activeIndex="{{activeIndex}}"
+    bind:cancel="closeActionSheet"
+    bind:actionclick="handleActionClick"
+  >
+  </zan-actionsheet>
 </view>

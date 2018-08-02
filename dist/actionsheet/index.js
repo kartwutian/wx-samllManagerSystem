@@ -18,6 +18,10 @@ Component({
     cancelText: {
       type: String,
       value: ''
+    },
+    activeIndex: {
+      type: Number,
+      value: 0
     }
   },
   methods: {
